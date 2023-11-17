@@ -1,0 +1,23 @@
+body {
+  background-image: url(../Saved\ Pictures/newback.jpg);
+}
+body a {
+  color: gold;
+  font-size: large;
+  background-color: blueviolet;
+}
+.forminfo {
+  background-color: aliceblue;
+}
+.forminfo button {
+  float: right;
+  background-color: darkorange;
+}
+.forminfo label {
+  display: inline-block;
+  width: 110px;
+}
+
+.forminfo input {
+  padding: 5px 10px;
+}

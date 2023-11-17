@@ -1,3 +1,9 @@
+body {
+  background-image: url(../Saved\ Pictures/colorful.png);
+  height: 100%;
+  width: 100%;
+}
+
 .titleWidth {
   width: 100%;
   background-color: rgba(109, 240, 22, 0.413);
@@ -17,4 +23,11 @@
 .formAccueil button {
   background-color: rgb(153, 220, 20);
   float: right;
+}
+.formAccueil label {
+  display: inline-block;
+  width: 200px;
+}
+.formAccueil input {
+  padding: 5px 10px;
 }
