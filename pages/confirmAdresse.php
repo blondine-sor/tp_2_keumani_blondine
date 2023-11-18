@@ -35,7 +35,10 @@ if (isset($_POST)) {
             }
         }
     } else { ?>
+        //Separation des valeurs pour la confirmation
         <form method="post" action="./resultatAdresse.php">
+            <legend>Voici Vos Adresse</legend>
+            <input hidden name="number" value=<?php echo $imax ?>>
             <?php
             for ($i = 1; $i <= $imax; $i++) {
                 $data = [
