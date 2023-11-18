@@ -3,38 +3,38 @@
 require_once "../functions/addressValidations.php";
 echo "<h2>Veuillez Confirmer vos adresses</h2>";
 if (isset($_POST)) {
-
     $imax = (int)$_POST["number"];
     //Validations Des Datas dans $_Post
     $isValid = true;
-    if ($isValid == false) {
-        for ($i = 1; $i <= $imax; $i++) {
-            if (!isset($_POST["city$i"])) {
-                echo "<b/>Veuillez selectioner une ville! <br/>";
-                $isValid = false;
-            }
-            if (isset($_POST["street$i"])) {
-                $streetNameIsValid = streetNameIsValid($_POST["street$i"]);
-                echo "$streetNameIsValid <br/>";
-                $isValid = false;
-            }
-            if (isset($_POST["street_nb$i"])) {
-                $streetNumberIsValid = streetNumberIsValid($_POST["street_nb$i"]);
-                echo "$streetNumberIsValid<br/>";
-                $isValid = false;
-            }
-            if (isset($_POST["zipcode$i"])) {
-                $zipcodeIsValid = zipcodeIsValid($_POST["zipcode$i"]);
-                echo "$zipcodeIsValid<br/>";
-                $isValid = false;
-            }
-            if (typeIsNotSelected($_POST["type$i"])) {
-                $typeIsNotSelected = typeIsNotSelected($_POST["type$i"]);
-                echo "$typeIsNotSelected<br/>";
-                $isValid = false;
-            }
+
+    for ($i = 1; $i <= $imax; $i++) {
+        if (!isset($_POST["city$i"])) {
+            echo "<b/>Veuillez selectioner une ville! <br/>";
+            $isValid = false;
         }
-    } else {  //Separation des valeurs pour la confirmation
+        if (isset($_POST["street$i"])) {
+            $streetNameIsValid = streetNameIsValid($_POST["street$i"]);
+            echo "$streetNameIsValid.$i <br/>";
+            $isValid = false;
+        }
+        if (isset($_POST["street_nb$i"])) {
+            $streetNumberIsValid = streetNumberIsValid($_POST["street_nb$i"]);
+            echo "$streetNumberIsValid.$i<br/>";
+            $isValid = false;
+        }
+        if (isset($_POST["zipcode$i"])) {
+            $zipcodeIsValid = zipcodeIsValid($_POST["zipcode$i"]);
+            echo "$zipcodeIsValid.$i<br/>";
+            $isValid = false;
+        }
+        if (typeIsNotSelected($_POST["type$i"])) {
+            $typeIsNotSelected = typeIsNotSelected($_POST["type$i"]);
+            echo "$typeIsNotSelected.$i<br/>";
+            $isValid = false;
+        }
+    }
+    if (!$isValid) {
+        //Separation des valeurs pour la confirmation
 ?>
         <form class="formConfirm" method="post" action="./resultatAdresse.php">
             <fieldset>
@@ -69,7 +69,7 @@ if (isset($_POST)) {
                     <br /><?php
                         };
                             ?>
-                <input type="button" value="Retour" onclick="history();" />
+
                 <button type="submit">Confirmer</button>
             </fieldset>
         </form><?php
@@ -77,3 +77,5 @@ if (isset($_POST)) {
         } else {
             header('Location:../pages/infoAdresse.php');
         }
+                ?>
+<input type="button" value="Retour" onclick="history.back()" />
