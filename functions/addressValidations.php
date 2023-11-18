@@ -1,5 +1,5 @@
 <?php
-/* --to do 
+/* --Fonctions 
   --validation street length
   --validation street number length
   --validation du select et radio button
@@ -26,7 +26,7 @@ function streetNameIsValid($street)
             'msg' => 'Le nom de la rue est trop longue!'
         ];
     }
-    /*--to do verify in db */
+
     $resultat = $result["msg"];
     return $resultat;
 }

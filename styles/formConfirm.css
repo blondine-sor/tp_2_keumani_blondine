@@ -1,0 +1,19 @@
+body {
+  background-image: url(../Saved\ Pictures/polkadot.png);
+}
+
+.formConfirm {
+  background-color: azure;
+}
+.formConfirm button {
+  float: right;
+  background-color: darkorange;
+}
+.formConfirm label {
+  display: inline-block;
+  width: 110px;
+}
+
+.formConfirm input {
+  padding: 5px 10px;
+}
